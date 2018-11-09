@@ -1,0 +1,26 @@
+--updates
+
+UPDATE table SET column = "foo" where ...
+
+--delete data
+
+Delete from table where 
+@@ rowcount <> #
+rollback
+else commit
+
+--CASE this is from Kahn Academy SQL video which is FREE! 
+
+SELECT type, heart_rate,
+    CASE 
+        WHEN heart_rate > 220-30 THEN "above max"
+        WHEN heart_rate > ROUND(0.90 * (220-30)) THEN "above target"
+SELECT COUNT(*),
+    CASE 
+        WHEN heart_rate > 220-30 THEN "above max"
+        WHEN heart_rate > ROUND(0.90 * (220-30)) THEN "above target"
+        WHEN heart_rate > ROUND(0.50 * (220-30)) THEN "within target"
+        ELSE "below target"
+    END as "hr_zone"
+FROM exercise_logs
+GROUP BY hr_zone;
