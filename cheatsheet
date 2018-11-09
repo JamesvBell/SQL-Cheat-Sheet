@@ -1,3 +1,12 @@
+--inserts
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+--or
+
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+
 --updates
 
 UPDATE table SET column = "foo" where ...
@@ -24,3 +33,20 @@ SELECT COUNT(*),
     END as "hr_zone"
 FROM exercise_logs
 GROUP BY hr_zone;
+
+--create table  from w3schools.comfoo
+
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+--add column to table
+ALTER TABLE table ADD column INT
+default INT
+
+--Column then data type above and you can leave default off and it'll enter nulls. 
+
+--delete a table
+DROP TABLE tablecl
